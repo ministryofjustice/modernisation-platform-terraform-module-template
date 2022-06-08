@@ -1,5 +1,5 @@
 
 module "module_test" {
-  source             = "../../"
-  tags               = local.tags
+  source = "../../"
+  tags   = local.tags
 }
