@@ -24,12 +24,23 @@ aws-vault exec mod -- terraform init
 aws-vault exec mod -- terraform workspace select testing-test
 ```
 
-Run the tests from within the `test` directory
+Run the tests from within the `test` directory using the `testing-ci` user credentials.
+
+Get the crededtials from secrets manager using the helper script in the modernisation-platform main repo.
 
 ```
-cd ../
+cd modernisation-platform/scripts/internal/
+aws-vault exec mod -- go run get_testing_creds.go
+```
+
+Copy the credentials from the output of the script and paste them into the terminal from which you will run the tests.
+
+Next go into the testing folder and run the tests.
+
+```
+cd test
 go mod download
-aws-vault exec mod -- go test -v
+go test -v
 ```
 
 Upon successful run, you should see an output similar to the below
