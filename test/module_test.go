@@ -16,10 +16,7 @@ func TestModule(t *testing.T) {
 
 	defer terraform.Destroy(t, terraformOptions)
 
-	terraform.Init(t, terraformOptions)
-	terraform.WorkspaceSelectOrNew(t, terraformOptions, "testing-test")
-
-	terraform.Apply(t, terraformOptions)
+	terraform.InitAndApply(t, terraformOptions)
 
 	exampleName := terraform.Output(t, terraformOptions, "example_name")
 
