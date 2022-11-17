@@ -1,3 +1,3 @@
 output "example" {
-  value = module.example.name
+  value = module.module_test.name
 }
