@@ -33,7 +33,7 @@ jobs:
       - name: Init TFLint
         run: tflint --init
       - name: Run TFLint
-        run: tflint --format sarif > tflint.sarif
+        run: tflint --format sarif
       - name: Write output to file
         run: echo "${{ steps.tflint.outputs.stdout }}" > tflint.sarif
       - name: Upload SARIF file
