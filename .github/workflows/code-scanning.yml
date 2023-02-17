@@ -33,7 +33,8 @@ jobs:
       - name: Init TFLint
         run: tflint --init
       - name: Run TFLint
-        run: tflint --format sarif > tflint.sarif
+        run: |
+          tflint --format sarif > tflint.sarif
       - name: Upload SARIF file
         uses: >-
           github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5
