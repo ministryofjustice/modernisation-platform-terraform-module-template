@@ -1,6 +1,12 @@
 name: Secure Code Analysis
 on:
   workflow_dispatch: null
+  schedule:
+    cron: '35 1 * * 1'
+permissions:
+  actions: read
+  contents: read
+  security-events: write
 jobs:
   tflint:
     runs-on: '${{ matrix.os }}'
@@ -36,10 +42,6 @@ jobs:
   tfsec:
     name: tfsec
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
     steps:
       - name: Clone repo
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
