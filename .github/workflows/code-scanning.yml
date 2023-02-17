@@ -2,7 +2,7 @@ name: Secure Code Analysis
 on:
   workflow_dispatch: null
   schedule:
-    cron: '35 1 * * 1'
+    - cron: '35 1 * * 1'
 permissions:
   actions: read
   contents: read
