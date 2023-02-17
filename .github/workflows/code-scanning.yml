@@ -7,6 +7,8 @@ permissions:
   actions: read
   contents: read
   security-events: write
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   tflint:
     runs-on: '${{ matrix.os }}'
