@@ -26,8 +26,7 @@ jobs:
         with:
           path: ~/.tflint.d/plugins
           key: '${{ matrix.os }}-tflint-${{ hashFiles(''.tflint.hcl'') }}'
-      - uses: >-
-          terraform-linters/setup-tflint@ba6bb2989f94daf58a4cc6eac2c1ca7398a678bf # v3.0.0
+      - uses: terraform-linters/setup-tflint@ba6bb2989f94daf58a4cc6eac2c1ca7398a678bf # v3.0.0
         name: Setup TFLint
         with:
           tflint_version: latest
@@ -36,11 +35,9 @@ jobs:
       - name: Run TFLint
         run: tflint --format sarif --force > tflint.sarif
       - name: Upload SARIF file
-        uses: >-
-          github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5 # v2.2.4
+        uses: github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5 # v2.2.4
         with:
           sarif_file: tflint.sarif
-          category: code-scanning
   tfsec:
     name: tfsec
     runs-on: ubuntu-latest
@@ -55,11 +52,9 @@ jobs:
         with:
           additional_args: '--format sarif --out tfsec.sarif'
       - name: Upload SARIF file
-        uses: >-
-          github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5 # v2.2.4
+        uses: github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5 # v2.2.4
         with:
           sarif_file: tfsec.sarif
-          category: code-scanning
   checkov:
     name: checkov
     runs-on: ubuntu-latest
@@ -78,8 +73,6 @@ jobs:
           output_file_path: ./checkov.sarif
           output_format: sarif
       - name: Upload SARIF file
-        uses: >-
-          github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5 # v2.2.4
+        uses: github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5 # v2.2.4
         with:
           sarif_file: ./checkov.sarif
-          category: code-scanning
