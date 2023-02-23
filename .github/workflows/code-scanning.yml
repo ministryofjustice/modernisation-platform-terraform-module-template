@@ -1,6 +1,5 @@
 name: Secure Code Analysis
 on:
-  workflow_dispatch:
   schedule:
     - cron: '35 1 * * *'
 env:
