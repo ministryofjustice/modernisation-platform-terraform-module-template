@@ -24,7 +24,7 @@ cd test/unit-test
 
 Run the tests from within the `test` directory using the `testing-test` user credentials.
 
-Get the crededtials from https://moj.awsapps.com selecting the testing-test AWS env vars.
+Get the credentials from https://moj.awsapps.com selecting the testing-test AWS env vars.
 
 Copy the credentials and export them by pasting them into the terminal from which you will run the tests.
 
