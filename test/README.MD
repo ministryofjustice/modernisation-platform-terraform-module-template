@@ -16,12 +16,6 @@ go mod tidy
 
 # How to run the tests locally
 
-Initialise terraform workspace within the `test/unit-test` directory
-
-```
-cd test/unit-test
-```
-
 Run the tests from within the `test` directory using the `testing-test` user credentials.
 
 Get the credentials from https://moj.awsapps.com selecting the testing-test AWS env vars.
