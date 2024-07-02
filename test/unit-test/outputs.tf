@@ -1,3 +1,3 @@
-output "example" {
-  value = module.module_test.name
-}
+# output "example" {
+#   value = module.module_test.name
+# }

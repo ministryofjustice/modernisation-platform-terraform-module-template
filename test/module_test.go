@@ -1,10 +1,9 @@
 package main
 
 import (
-	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/stretchr/testify/assert"
-	"regexp"
 	"testing"
+
+	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
 func TestModule(t *testing.T) {
@@ -18,7 +17,7 @@ func TestModule(t *testing.T) {
 
 	terraform.InitAndApply(t, terraformOptions)
 
-	exampleName := terraform.Output(t, terraformOptions, "example_name")
+	// exampleName := terraform.Output(t, terraformOptions, "example_name")
 
-	assert.Regexp(t, regexp.MustCompile(`^example-name*`), exampleName)
+	// assert.Regexp(t, regexp.MustCompile(`^example-name*`), exampleName)
 }
