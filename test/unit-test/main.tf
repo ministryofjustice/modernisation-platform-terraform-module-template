@@ -1,6 +1,6 @@
 
 module "module_test" {
-  source = "../../"
+  source           = "../../"
   application_name = local.application_name
-  tags   = local.tags
+  tags             = local.tags
 }
