@@ -1,9 +1,7 @@
 name: Secure Code Analysis
 on:
   workflow_call:
-    secrets:
-        GITHUB_TOKEN:
-            required: true
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 permissions:
