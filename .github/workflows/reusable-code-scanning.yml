@@ -1,6 +1,12 @@
 name: Reusable Secure Code Analysis
 on:
   workflow_call:
+    inputs:
+        checkov_skip_check:
+            description: 'A list of checkov checks to suppress'
+            default: 'CKV_GIT_1,CKV_AWS_126,CKV2_AWS_38,CKV2_AWS_39'
+            required: false
+            type: string
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -88,7 +94,7 @@ jobs:
           framework: terraform
           output_file_path: ./checkov.sarif
           output_format: sarif
-          skip_check: CKV_GIT_1,CKV_AWS_126,CKV2_AWS_38,CKV2_AWS_39
+          skip_check: ${{  inputs.checkov_skip_check  }}
       - name: Upload SARIF file
         if: success() || failure()
         uses: github/codeql-action/upload-sarif@6db8d6351fd0be61f9ed8ebd12ccd35dcec51fea # v3.26.11
