@@ -8,12 +8,12 @@ on:
                 required: true
     pull_request:
       types: [opened, edited, reopened, synchronize]
-  permissions: {}
-  env:
+permissions: {}
+env:
     AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     TF_IN_AUTOMATION: true
-  jobs:
+jobs:
     go-tests:
       permissions:
         contents: read
