@@ -1,6 +1,6 @@
 module github.com/ministryofjustice/modernisation-platform-terraform-module-template
 
-go 1.23.1
+go 1.23
 
 require github.com/gruntwork-io/terratest v0.48.0
 
