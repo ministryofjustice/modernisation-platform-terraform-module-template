@@ -2,6 +2,8 @@
 
 [![Standards Icon]][Standards Link] [![Format Code Icon]][Format Code Link] [![Scorecards Icon]][Scorecards Link] [![SCA Icon]][SCA Link] [![Terraform SCA Icon]][Terraform SCA Link]
 
+This repository is for Moderisation Platform usage only. If you have a suggestion for a new module that would benefit mutiple teams in the Modernisation Platform, please raise an issue with the team [here.](https://github.com/ministryofjustice/modernisation-platform/issues/new?template=new-story-template.yml)
+
 ## Usage
 
 ```hcl
