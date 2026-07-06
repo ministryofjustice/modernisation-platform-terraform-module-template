@@ -1,8 +1,8 @@
 module github.com/ministryofjustice/modernisation-platform-terraform-module-template
 
-go 1.26
+go 1.26.0
 
-require github.com/gruntwork-io/terratest v1.0.0
+require github.com/gruntwork-io/terratest v1.0.1
 
 require (
 	github.com/agext/levenshtein v1.2.3 // indirect
