@@ -1,5 +1,6 @@
+---
 name: Secure Code Analysis
-on:
+"on":
   schedule:
     - cron: '35 1 * * *'
 env:
